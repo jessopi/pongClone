@@ -15,6 +15,7 @@ private:
 	void render();
 	void newGame();
 	float deltaTime;
+	const float ball_Radius = 8.0f;
 	const float paddleSpeed = 400.0f;
 	sf::Event event;
 	sf::Clock clock;

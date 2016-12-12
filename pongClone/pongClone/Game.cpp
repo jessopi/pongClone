@@ -1,5 +1,4 @@
 #include "Game.h"
-#include <iostream>
 Game::Game()
 {
 	ball = new PongBall(PongBall(sf::Vector2f(320.0f, 240.0f), "./ball.png"));	
@@ -56,7 +55,8 @@ void Game::start()
 		checkScore();
 
 		}
-		else {
+		else 
+		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
 			{
 				PAUSE = 1;
@@ -67,9 +67,9 @@ void Game::start()
 }
 void Game::checkScore()
 {
-	if (ball->spriteLocation().x + 16.0f < 0)
+	if (ball->spriteLocation().x + ball_Radius < 0)
 	{
-		if (p2_Score->getScore() == 5)
+		if (p2_Score->getScore() == 10)
 		{
 			winnerText->setText("				You Lose! \n Press spacebar to play again!");
 			p2_Score->update();
@@ -82,9 +82,9 @@ void Game::checkScore()
 			ball->reset(1.0f);
 		}
 	}
-	else if (ball->spriteLocation().x - 16.0f > 650)
+	else if (ball->spriteLocation().x - ball_Radius > 650)
 	{
-		if (p1_Score->getScore() == 5)
+		if (p1_Score->getScore() == 1)
 		{
 			winnerText->setText("				 You Win! \n Press spacebar to play again!");
 			p1_Score->update();
