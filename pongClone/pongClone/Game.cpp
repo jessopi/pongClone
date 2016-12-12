@@ -4,8 +4,8 @@ Game::Game()
 	ball = new PongBall(PongBall(sf::Vector2f(320.0f, 240.0f), "./ball.png"));	
 	background = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Background.png"));				
 
-	p1 = new Sprite(Sprite(sf::Vector2f(25.0, 190.0), "./Paddle.png"));	
-	p2 = new Computer(Computer(sf::Vector2f(605.0, 190.0), "./Paddle.png"));						
+	p1 = new Sprite(Sprite(sf::Vector2f(20.0, 188.5), "./Paddle.png"));	
+	p2 = new Computer(Computer(sf::Vector2f(610.0, 188.5), "./Paddle.png"));						
 
 	p1_Score = new Text(sf::Vector2f(162.5f, 0.0f), 16, "./arial.tff", "0");
 	p2_Score = new  Text(sf::Vector2f(487.5f, 0.0f), 16, "./arial.tff", "0");
@@ -25,7 +25,7 @@ void Game::start()
 			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
 				window->close();
 		}
-
+		
 		if (PAUSE == 1)
 		{
 			deltaTime = clock.restart().asSeconds();
@@ -42,11 +42,11 @@ void Game::start()
 
 		p2->paddleFollow(ball->spriteLocation().y);
 
-		if (p1->spriteLocation().y < 21.0f) p1->setSprite(25.0f, 21.0f);
-		else if (p1->spriteLocation().y > 498.5f - 100.0f) p1->setSprite(25.0f, 498.5f - 100.0f);
+		if (p1->spriteLocation().y < 21.0f) p1->setSprite(20.0f, 21.0f);
+		else if (p1->spriteLocation().y > 498.5f - 100.0f) p1->setSprite(20.0f, 498.5f - 100.0f);
 
-		if (p2->spriteLocation().y < 21.0f) p2->setSprite(605.0f, 21.0f);
-		else if (p2->spriteLocation().y > 498.5f - 100.0f) p2->setSprite(605.0f, 498.5f - 100.0f);
+		if (p2->spriteLocation().y < 21.0f) p2->setSprite(610.0f, 21.0f);
+		else if (p2->spriteLocation().y > 498.5f - 100.0f) p2->setSprite(610.0f, 498.5f - 100.0f);
 
 
 		ball->move();
