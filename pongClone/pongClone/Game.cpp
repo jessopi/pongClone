@@ -42,13 +42,6 @@ void Game::start()
 
 		p2->paddleFollow(ball->spriteLocation().y);
 
-		if (p1->spriteLocation().y < 21.0f) p1->setSprite(20.0f, 21.0f);
-		else if (p1->spriteLocation().y > 498.5f - 100.0f) p1->setSprite(20.0f, 498.5f - 100.0f);
-
-		if (p2->spriteLocation().y < 21.0f) p2->setSprite(610.0f, 21.0f);
-		else if (p2->spriteLocation().y > 498.5f - 100.0f) p2->setSprite(610.0f, 498.5f - 100.0f);
-
-
 		ball->move();
 		ball->collision(*p1, *p2);
 		render();
