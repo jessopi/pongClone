@@ -9,20 +9,14 @@ Computer::Computer(sf::Vector2f position, std::string texturePath)
 Computer::Computer()
 {
 }
-void Computer::paddleFollow(float BallY)
+void Computer::paddleFollow(float BallY, float deltaTime)
 {
-	if (BallY + 3.0f > spriteImage.getPosition().y + 100.0f)
-	{
-		//while (spriteImage.getPosition().y + 80.0f < BallY)
-	//	{
-		spriteImage.move(0.0f, 6.0f);
-	//	}
+	if (BallY + 4.0f  > spriteImage.getPosition().y + 100.0f)
+	{	
+			spriteImage.move(0.0f, paddleSpeed*deltaTime);
 	}
-	 if (BallY + 3.0f < spriteImage.getPosition().y)
+	else if (BallY + 4.0f < spriteImage.getPosition().y)
 	{
-	//	while (spriteImage.getPosition().y +20 > BallY)
-	//	{
-			spriteImage.move(0.0f, -6.0f);
-	//	}
+			spriteImage.move(0.0f, -paddleSpeed*deltaTime);	
 	}
 }

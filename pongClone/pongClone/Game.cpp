@@ -40,7 +40,7 @@ void Game::start()
 			p1->move(paddleSpeed*deltaTime);
 		}
 
-		p2->paddleFollow(ball->spriteLocation().y);
+		p2->paddleFollow(ball->spriteLocation().y, deltaTime);
 
 		ball->move();
 		ball->collision(*p1, *p2);

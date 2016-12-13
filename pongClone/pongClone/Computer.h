@@ -6,5 +6,7 @@ class Computer :
 public:
 	Computer(sf::Vector2f , std::string );
 	Computer();
-	void paddleFollow(float);
+	void paddleFollow(float,float);
+private:
+	const float paddleSpeed = 400.0f;
 };

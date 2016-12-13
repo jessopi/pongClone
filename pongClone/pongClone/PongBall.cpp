@@ -20,7 +20,6 @@ void PongBall::reset(float direction)
 {
 	spriteImage.setPosition(320.0f, 240.0f);
 	ballX = 0;
-	
 
 	ballX = direction * MOVESPEED;
 
