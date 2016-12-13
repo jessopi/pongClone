@@ -18,7 +18,7 @@ void PongBall::move()
 }
 void PongBall::reset(float direction)
 {
-	spriteImage.setPosition(320.0f, 240.0f);
+	spriteImage.setPosition(325.0f, 238.5f);
 	ballX = 0;
 
 	ballX = direction * MOVESPEED;
@@ -36,7 +36,6 @@ void PongBall::collision(Sprite &p1, Computer &p2)
 
 		ballX = MOVESPEED*cos(bounceAngle);
 		ballY = MOVESPEED*-sin(bounceAngle);
-		move();
 	}
 	else if (this->spriteLocation().x - 8.0f < p2.spriteLocation().x  &&
 		this->spriteLocation().x - 8.0f > p2.spriteLocation().x - 20.0f &&
@@ -47,9 +46,7 @@ void PongBall::collision(Sprite &p1, Computer &p2)
 
 		ballX = -MOVESPEED*cos(bounceAngle);
 		ballY = MOVESPEED*-sin(bounceAngle);
-		move();
 	}
-	//move();
 	wallCollision();
 }
 void PongBall::wallCollision()
@@ -67,7 +64,6 @@ void PongBall::wallCollision()
 			ballX = -MOVESPEED*cos(-bounceAngle);
 			ballY = MOVESPEED*sin(abs(bounceAngle));
 		}
-		move();
 	}
 	else if (this->spriteLocation().y + 8.0f > 498.0f)
 	{

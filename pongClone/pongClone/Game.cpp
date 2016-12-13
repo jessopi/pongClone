@@ -1,7 +1,7 @@
 #include "Game.h"
 Game::Game()
 {
-	ball = new PongBall(PongBall(sf::Vector2f(320.0f, 240.0f), "./ball.png"));	
+	ball = new PongBall(PongBall(sf::Vector2f(325.0f, 238.5f), "./ball.png"));	
 	background = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Background.png"));				
 
 	p1 = new Sprite(Sprite(sf::Vector2f(20.0, 188.5), "./Paddle.png"));	
