@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Sprite.h"
+#include "Audio.h"
 #include "Computer.h"
 #include "PongBall.h"
 #include "Text.h"
@@ -17,6 +18,7 @@ private:
 	float deltaTime;
 	const float ball_Radius = 8.0f;
 	const float paddleSpeed = 400.0f;
+	Audio *sound;
 	sf::Event event;
 	sf::Clock clock;
 	sf::RenderWindow *window;

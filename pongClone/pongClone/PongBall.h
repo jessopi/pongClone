@@ -1,12 +1,13 @@
 #pragma once
 #include "Sprite.h"
 #include "Computer.h"
+#include "Audio.h"
 
 class PongBall :
 	public Sprite
 {
 public:
-	PongBall(sf::Vector2f , std::string );
+	PongBall(sf::Vector2f , std::string , std::string,std::string);
 	PongBall();
 	void move();
 	void reset(float );
@@ -15,7 +16,8 @@ public:
 private:
 	void wallCollision();
 	void findBounceAngle(float , float );
-
+	Audio *paddleSound;
+	Audio *wallSound;
 	float ballX;
 	float ballY;
 	float bounceAngle;

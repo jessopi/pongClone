@@ -1,7 +1,8 @@
 #include "Game.h"
 Game::Game()
 {
-	ball = new PongBall(PongBall(sf::Vector2f(325.0f, 238.5f), "./ball.png"));	
+	sound = new Audio("./Ping.wav");
+	ball = new PongBall(PongBall(sf::Vector2f(325.0f, 238.5f), "./ball.png", "./paddle.wav", "./wall.wav"));	
 	background = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Background.png"));				
 
 	p1 = new Sprite(Sprite(sf::Vector2f(20.0, 188.5), "./Paddle.png"));	
@@ -62,6 +63,7 @@ void Game::checkScore()
 {
 	if (ball->spriteLocation().x + ball_Radius < 0)
 	{
+		sound->play();
 		if (p2_Score->getScore() == 10)
 		{
 			winnerText->setText("				You Lose! \n Press spacebar to play again!");
@@ -77,6 +79,8 @@ void Game::checkScore()
 	}
 	else if (ball->spriteLocation().x - ball_Radius > 650)
 	{
+		sound->play();
+
 		if (p1_Score->getScore() == 1)
 		{
 			winnerText->setText("				 You Win! \n Press spacebar to play again!");
