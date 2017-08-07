@@ -81,7 +81,7 @@ void Game::checkScore()
 	{
 		sound->play();
 
-		if (p1_Score->getScore() == 1)
+		if (p1_Score->getScore() == 10)
 		{
 			winnerText->setText("				 You Win! \n Press spacebar to play again!");
 			p1_Score->update();
