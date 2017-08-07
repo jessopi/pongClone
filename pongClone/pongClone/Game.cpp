@@ -11,7 +11,7 @@ Game::Game()
 	p1_Score = new Text(sf::Vector2f(162.5f, 0.0f), 16, "./arial.tff", "0");
 	p2_Score = new  Text(sf::Vector2f(487.5f, 0.0f), 16, "./arial.tff", "0");
 
-	winnerText = new Text(sf::Vector2f(330.0f, 240.0f), 20, "./arial.tff", "");
+	displayText = new Text(sf::Vector2f(330.0f, 240.0f), 20, "./arial.tff", "");
 	window = new sf::RenderWindow (sf::VideoMode(650, 500), "Pong Game!", sf::Style::Close | sf::Style::Titlebar);
 
 	window->setVerticalSyncEnabled(true); 
@@ -27,33 +27,42 @@ void Game::start()
 				window->close();
 		}
 		
-		if (PAUSE == 1)
+		if (isPaused == 0)
 		{
-			deltaTime = clock.restart().asSeconds();
+				deltaTime = clock.restart().asSeconds();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
 		{
 			p1->move(-paddleSpeed*deltaTime);
 		}
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
 		{
 			p1->move(paddleSpeed*deltaTime);
 		}
 
-		p2->paddleFollow(ball->spriteLocation().y, deltaTime);
+			p2->paddleFollow(ball->spriteLocation().y, deltaTime);
 
-		ball->move();
-		ball->collision(*p1, *p2);
-		render();
-		checkScore();
-
+			ball->move();
+			ball->collision(*p1, *p2);
+			render();
+			checkScore();
 		}
 		else 
-		{
+		{	
+			if (firstRun && isPaused)
+			{
+				displayText->setText("		Welcome to pongClone! \nPress spacebar to begin the game!");
+				render();
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+				{
+					firstRun = 0;
+					isPaused = 0;
+				}
+			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
 			{
-				PAUSE = 1;
+				isPaused = 0;
 				newGame();
 			}
 		}
@@ -66,10 +75,10 @@ void Game::checkScore()
 		sound->play();
 		if (p2_Score->getScore() == 10)
 		{
-			winnerText->setText("				You Lose! \n Press spacebar to play again!");
+			displayText->setText("				You Lose! \n Press spacebar to play again!");
 			p2_Score->update();
 			render();
-			PAUSE = 0;
+			isPaused = 1;
 		}
 		else
 		{
@@ -83,10 +92,10 @@ void Game::checkScore()
 
 		if (p1_Score->getScore() == 10)
 		{
-			winnerText->setText("				 You Win! \n Press spacebar to play again!");
+			displayText->setText("				 You Win! \n Press spacebar to play again!");
 			p1_Score->update();
 			render();
-			PAUSE = 0;
+			isPaused = 1;
 		}
 		else
 		{
@@ -97,7 +106,7 @@ void Game::checkScore()
 }
 void Game::newGame()
 {
-	winnerText->setText("");
+	displayText->setText("");
 	ball->reset(-1.0f);
 	p1->reset();
 	p1_Score->reset();
@@ -111,7 +120,7 @@ void Game::render()
 	p2->Render(*window);
 	p1_Score->Render(*window);
 	p2_Score->Render(*window);
-	winnerText->Render(*window);
+	displayText->Render(*window);
 	ball->Render(*window);
 	window->display();
 }

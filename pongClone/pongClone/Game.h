@@ -28,7 +28,8 @@ private:
 	Text *p1_Score;		
 	Text *p2_Score;
 	PongBall* ball;
-	Text *winnerText;
-	int PAUSE = 1;
+	Text *displayText;
+	int isPaused = 1;
+	int firstRun = 1;
 };
 

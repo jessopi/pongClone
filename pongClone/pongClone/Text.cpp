@@ -5,7 +5,7 @@ Text::Text(sf::Vector2f position, float fontSize, std::string fontPath, std::str
 	font.loadFromFile("./arial.ttf");
 	text.setFont(font);
 	text.setString(initialText);
-	text.setCharacterSize(16);
+	text.setCharacterSize(15);
 	text.setStyle(sf::Text::Bold);
 	text.setPosition(position);
 }
