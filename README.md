@@ -8,37 +8,29 @@ Classic pong video game. Implemented using C++ and using the SFML library.
 To compile:
 ??????
 
-Controls:
-??????
+Controls
+------
+  - Spacebar to start game.
+  - W and S for movement.
+  - ESC to quit game.
 
-Images:
-????
-????
+Images
+------
+- before game starts (to be included)
+![](http://i.imgur.com/lbNJCXz.png)
 
-Inlcuded Files:
-Audio.cpp
-Audio.h	
-Background.png	
-Ball.png	
-Computer.cpp	
-Computer.h	
-Dotted.png	
-Game.cpp	
-Game.h
-Main.cpp	
-Paddle.png	
-Ping.wav	
-PongBall.cpp	
-PongBall.h	
-Sprite.cpp	
-Sprite.h	
-Text.cpp	
-Text.h
-arial.ttf	
-arialbd.ttf	
-arialbi.ttf	
-ariali.ttf
-ariblk.ttf	
-openal32.dll	
-paddle.wav	
-wall.wav
+Included Files
+------
+ - Audio.cpp 
+ - Audio.h	
+ - Computer.cpp	
+ - Computer.h		
+ - Game.cpp	
+ - Game.h
+ - Main.cpp	
+ - PongBall.cpp	
+ - PongBall.h	
+ - Sprite.cpp	
+ - Sprite.h	
+ - Text.cpp	
+ - Text.h
