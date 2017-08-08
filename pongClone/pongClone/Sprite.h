@@ -9,7 +9,6 @@ public:
 	Sprite();
 	void Render(sf::RenderWindow &);
 	sf::Vector2f spriteLocation();
-	void move(float );
 	void reset();
 protected:
 	sf::Vector2f initial_position;

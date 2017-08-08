@@ -5,6 +5,7 @@
 #include "Computer.h"
 #include "PongBall.h"
 #include "Text.h"
+#include "Player.h"
 
 class Game
 {
@@ -23,7 +24,7 @@ private:
 	sf::Clock clock;
 	sf::RenderWindow *window;
 	Sprite *background;				//Background
-	Sprite *p1;				//Player
+	Player *p1;				//Player
 	Computer *p2;			//Computer
 	Text *p1_Score;		
 	Text *p2_Score;

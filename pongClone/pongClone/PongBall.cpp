@@ -21,10 +21,7 @@ void PongBall::move()
 void PongBall::reset(float direction)
 {
 	spriteImage.setPosition(325.0f, 238.5f);
-	ballX = 0;
-
 	ballX = direction * MOVESPEED;
-
 	ballY = 0.0f;
 }
 void PongBall::collision(Sprite &p1, Computer &p2)

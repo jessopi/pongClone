@@ -5,7 +5,7 @@ Game::Game()
 	ball = new PongBall(PongBall(sf::Vector2f(325.0f, 238.5f), "./ball.png", "./paddle.wav", "./wall.wav"));	
 	background = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Background.png"));				
 
-	p1 = new Sprite(Sprite(sf::Vector2f(20.0, 188.5), "./Paddle.png"));	
+	p1 = new Player(Player(sf::Vector2f(20.0, 188.5), "./Paddle.png"));	
 	p2 = new Computer(Computer(sf::Vector2f(610.0, 188.5), "./Paddle.png"));						
 
 	p1_Score = new Text(sf::Vector2f(162.5f, 0.0f), 16, "./arial.tff", "0");

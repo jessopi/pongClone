@@ -10,7 +10,7 @@ public:
 	PongBall(sf::Vector2f , std::string , std::string,std::string);
 	PongBall();
 	void move();
-	void reset(float );
+	void reset(float);
 	void collision(Sprite &, Computer &);
 
 private:
