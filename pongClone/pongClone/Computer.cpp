@@ -2,6 +2,7 @@
 
 Computer::Computer(sf::Vector2f position, std::string texturePath)
 {
+	initial_position = position;
 	spriteTexture.loadFromFile(texturePath);
 	spriteImage.setTexture(spriteTexture);
 	spriteImage.setPosition(position);

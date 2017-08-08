@@ -109,6 +109,7 @@ void Game::newGame()
 	displayText->setText("");
 	ball->reset(-1.0f);
 	p1->reset();
+	p2->reset();
 	p1_Score->reset();
 	p2_Score->reset();
 }
