@@ -24,12 +24,15 @@ private:
 	sf::Clock clock;
 	sf::RenderWindow *window;
 	Sprite *background;				//Background
+	Sprite *startScreen;
+	Sprite *gameOver;
+	Sprite *youWin;
 	Player *p1;				//Player
 	Computer *p2;			//Computer
 	Text *p1_Score;		
 	Text *p2_Score;
 	PongBall* ball;
-	Text *displayText;
+	//Text *displayText;
 	int isPaused = 1;
 	int firstRun = 1;
 };
