@@ -73,7 +73,7 @@ void Game::checkScore()
 	if (ball->spriteLocation().x + ball_Radius < 0)
 	{
 		sound->play();
-		if (p2_Score->getScore() == 10)
+		if (p2_Score->getScore() == 5)
 		{
 			displayText->setText("				You Lose! \n Press spacebar to play again!");
 			p2_Score->update();
@@ -90,7 +90,7 @@ void Game::checkScore()
 	{
 		sound->play();
 
-		if (p1_Score->getScore() == 10)
+		if (p1_Score->getScore() == 5)
 		{
 			displayText->setText("				 You Win! \n Press spacebar to play again!");
 			p1_Score->update();
