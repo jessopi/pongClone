@@ -8,9 +8,13 @@ Player::Player(sf::Vector2f position, std::string texturePath)
 	spriteImage.setPosition(position);
 }
 Player::Player()
-{
-}
+{}
 
+/*
+	Takes float for input for direction and speed of paddle
+	and function checks if the paddle goes out of bounds and sets its 
+	position.
+*/
 void Player::move(float moveSpeed)
 {
 	spriteImage.move(0.0f, moveSpeed);
@@ -25,5 +29,4 @@ void Player::move(float moveSpeed)
 	}
 }
 Player::~Player()
-{
-}
+{}

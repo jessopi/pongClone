@@ -1,4 +1,16 @@
+/*
+*	Ian Jessop
+*	Fall 2017
+*	Game.cpp
+*	
+*/
+
+
+
 #include "Game.h"
+/*
+	Declaring needed objects
+*/
 Game::Game()
 {
 	sound = new Audio("./Ping.wav");
@@ -20,6 +32,16 @@ Game::Game()
 	window->setVerticalSyncEnabled(true); 
 }
 
+/*
+	Game Loop, continues till window closes
+	Accepts keys W,S,Space and ESC
+	Moves p1 paddle up or down if W or S is pressed
+	First run through brings up Start Screen
+	and then only pauses if asked to play again.
+	Makes calls to p2 paddle, ball move and collision
+
+
+*/
 void Game::start()
 {
 	while (window->isOpen())
@@ -71,6 +93,13 @@ void Game::start()
 		}
 	}	
 }
+
+/*
+	Checks if the the computer/player scores and calculates the score.
+	if score for either reaches 5 win/loss screen appears and game ends.
+	call to sound for scoring audio.
+
+*/
 void Game::checkScore()
 {
 	if (ball->spriteLocation().x + ball_Radius < 0)
@@ -107,6 +136,9 @@ void Game::checkScore()
 		}
 	}
 }
+/*
+	Resets paddles,ball and scores back to original
+*/
 void Game::newGame()
 {
 	ball->reset(-1.0f);
@@ -115,6 +147,10 @@ void Game::newGame()
 	p1_Score->reset();
 	p2_Score->reset();
 }
+
+/*
+Calls render for all needed classes and then displays them
+*/
 void Game::render()
 {
 	window->clear();

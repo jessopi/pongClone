@@ -30,7 +30,10 @@ void Text::reset()
 	text.setString("0");
 	SCORE = 1;
 }
-int Text::getScore() { return SCORE; }
+int Text::getScore() 
+{ 
+	return SCORE; 
+}
 
 Text::~Text()
 {}
