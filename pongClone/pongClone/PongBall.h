@@ -12,7 +12,7 @@ public:
 	void move();
 	void reset(float);
 	void collision(Sprite &, Computer &);
-
+	~PongBall();
 private:
 	void wallCollision();
 	void findBounceAngle(float , float );

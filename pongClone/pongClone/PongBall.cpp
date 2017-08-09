@@ -88,3 +88,5 @@ void PongBall::findBounceAngle(float A, float B)
 
 	bounceAngle = normalizedRelativeIntersectionY * MAXBOUNCEANGLE;
 }
+PongBall::~PongBall()
+{}

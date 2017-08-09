@@ -22,3 +22,5 @@ void Sprite::reset()
 {
 	spriteImage.setPosition(initial_position);
 }
+Sprite::~Sprite()
+{}

@@ -10,6 +10,7 @@ public:
 	void setText(std::string);
 	void Render(sf::RenderWindow &);
 	void reset();
+	~Text();
 private:
 	sf::Font font;
 	sf::Text text;

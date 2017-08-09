@@ -31,3 +31,6 @@ void Text::reset()
 	SCORE = 1;
 }
 int Text::getScore() { return SCORE; }
+
+Text::~Text()
+{}

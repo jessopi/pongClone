@@ -21,3 +21,5 @@ void Computer::paddleFollow(float BallY, float deltaTime)
 			spriteImage.move(0.0f, -paddleSpeed*deltaTime);	
 	}
 }
+Computer::~Computer()
+{}

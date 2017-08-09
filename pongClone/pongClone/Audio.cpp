@@ -9,3 +9,5 @@ void Audio::play()
 {
 	sound.play();
 }
+Audio::~Audio()
+{}

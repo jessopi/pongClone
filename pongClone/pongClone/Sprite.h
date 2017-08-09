@@ -10,6 +10,7 @@ public:
 	void Render(sf::RenderWindow &);
 	sf::Vector2f spriteLocation();
 	void reset();
+	Sprite();
 protected:
 	sf::Vector2f initial_position;
 	sf::Texture spriteTexture;
