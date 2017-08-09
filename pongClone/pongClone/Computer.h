@@ -9,5 +9,5 @@ public:
 	void paddleFollow(float,float);
 	~Computer();
 private:
-	const float paddleSpeed = 400.0f;
+	const float paddleSpeed = 375.0f;
 };
