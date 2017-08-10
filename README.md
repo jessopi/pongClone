@@ -17,7 +17,9 @@ Controls
 Images
 ------
 - before game starts (to be included)
-![](http://i.imgur.com/lbNJCXz.png)
+![](http://i.imgur.com/JcQISgb.png)
+![](http://i.imgur.com/Ujztaf7.png)
+![](http://i.imgur.com/mZ3sTzA.png)
 
 Included Files
 ------
