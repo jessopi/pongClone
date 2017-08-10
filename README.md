@@ -16,9 +16,9 @@ Controls
 
 Images
 ------
-![](http://i.imgur.com/JcQISgb.png)
-![](http://i.imgur.com/Ujztaf7.png)
-![](http://i.imgur.com/mZ3sTzA.png)
+![](http://i.imgur.com/MtZ2VEv.png)
+![](http://i.imgur.com/pXNRhB7.png)
+![](http://i.imgur.com/cRRfAzQ.png)
 
 Included Files
 ------
