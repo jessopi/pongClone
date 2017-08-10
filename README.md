@@ -6,6 +6,7 @@ Updated: 8/07/2017
 Classic pong video game. Implemented using C++ and using the SFML library. 
 
 To compile:
+Need to have SFML installed on system and have the header files in the path.
 ??????
 
 Controls
