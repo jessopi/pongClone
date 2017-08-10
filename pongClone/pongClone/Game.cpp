@@ -13,21 +13,21 @@
 */
 Game::Game()
 {
-	sound = new Audio("./Ping.wav");
-	ball = new PongBall(PongBall(sf::Vector2f(325.0f, 238.5f), "./ball.png", "./paddle.wav", "./wall.wav"));	
+	sound = new Audio("./Sound/Ping.wav");
+	ball = new PongBall(PongBall(sf::Vector2f(325.0f, 238.5f), "./Images/ball.png", "./Sound/paddle.wav", "./Sound/wall.wav"));	
 	
-	background = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Background.png"));				
-	startScreen = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./startScreen.png"));
-	gameOver = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./gameOver.png"));
-	youWin = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./youWin.png"));
+	background = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Images/Background.png"));				
+	startScreen = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Images/startScreen.png"));
+	gameOver = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Images/gameOver.png"));
+	youWin = new Sprite(Sprite(sf::Vector2f(0.0, 0.0), "./Images/youWin.png"));
 	
-	p1 = new Player(Player(sf::Vector2f(20.0, 188.5), "./Paddle.png"));	
-	p2 = new Computer(Computer(sf::Vector2f(610.0, 188.5), "./Paddle.png"));						
+	p1 = new Player(Player(sf::Vector2f(20.0, 188.5), "./Images/Paddle.png"));	
+	p2 = new Computer(Computer(sf::Vector2f(610.0, 188.5), "./Images/Paddle.png"));						
 
 	p1_Score = new Text(sf::Vector2f(162.5f, 0.0f), 16, "./arial.tff", "0");
 	p2_Score = new  Text(sf::Vector2f(487.5f, 0.0f), 16, "./arial.tff", "0");
 
-	window = new sf::RenderWindow (sf::VideoMode(650, 500), "Pong Game!", sf::Style::Close | sf::Style::Titlebar);
+	window = new sf::RenderWindow (sf::VideoMode(650, 500), "pongClone!", sf::Style::Close | sf::Style::Titlebar);
 
 	window->setVerticalSyncEnabled(true); 
 }
