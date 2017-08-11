@@ -1,8 +1,8 @@
 #include "Text.h"
 
-Text::Text(sf::Vector2f position, float fontSize, std::string fontPath, std::string initialText)
+Text::Text(sf::Vector2f position, float fontSize,std::string fontPath, std::string initialText)
 {
-	font.loadFromFile("./arial.ttf");
+	font.loadFromFile(fontPath);
 	text.setFont(font);
 	text.setString(initialText);
 	text.setCharacterSize(15);

@@ -3,7 +3,7 @@
 class Text
 {
 public:
-	Text(sf::Vector2f , float , std::string  , std::string );
+	Text(sf::Vector2f , float,std::string  , std::string );
 	Text();
 	void update();
 	int getScore();

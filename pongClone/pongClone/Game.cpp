@@ -24,8 +24,8 @@ Game::Game()
 	p1 = new Player(Player(sf::Vector2f(20.0, 188.5), "./Images/Paddle.png"));	
 	p2 = new Computer(Computer(sf::Vector2f(610.0, 188.5), "./Images/Paddle.png"));						
 
-	p1_Score = new Text(sf::Vector2f(162.5f, 0.0f), 16, "./arial.tff", "0");
-	p2_Score = new  Text(sf::Vector2f(487.5f, 0.0f), 16, "./arial.tff", "0");
+	p1_Score = new Text(sf::Vector2f(162.5f, 0.0f), 16, "./Font/arial.ttf", "0");
+	p2_Score = new  Text(sf::Vector2f(487.5f, 0.0f), 16, "./Font/arial.ttf", "0");
 
 	window = new sf::RenderWindow (sf::VideoMode(650, 500), "pongClone!", sf::Style::Close | sf::Style::Titlebar);
 
