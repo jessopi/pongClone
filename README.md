@@ -1,13 +1,7 @@
-# WIP
 # pongClone
-Ian Jessop
-Updated: 8/07/2017
-
-Classic pong video game. Implemented using C++ and using the SFML library. 
-
-To compile:
-Need to have SFML installed on system and have the header files in the path.
-??????
+------
+Basic implementation of the classic pong game. Implemented using C++ programming language and the SFML library.
+To compile you need to have SFML installed.
 
 Controls
 ------
