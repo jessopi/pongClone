@@ -6,6 +6,7 @@ class Audio
 public:
 	Audio(std::string);
 	void play();
+	~Audio();
 private:
 	sf::Sound sound;
 	sf::SoundBuffer soundBuffer;

@@ -5,12 +5,14 @@
 #include "Computer.h"
 #include "PongBall.h"
 #include "Text.h"
+#include "Player.h"
 
 class Game
 {
 public:
 	Game();
 	void start();
+	~Game();
 private:
 	void checkScore();
 	void render();
@@ -22,13 +24,18 @@ private:
 	sf::Event event;
 	sf::Clock clock;
 	sf::RenderWindow *window;
+
 	Sprite *background;				//Background
-	Sprite *p1;				//Player
+	Sprite *startScreen;
+	Sprite *gameOver;
+	Sprite *youWin;
+	
+	Player *p1;				//Player
 	Computer *p2;			//Computer
 	Text *p1_Score;		
 	Text *p2_Score;
+
 	PongBall* ball;
-	Text *displayText;
 	int isPaused = 1;
 	int firstRun = 1;
 };

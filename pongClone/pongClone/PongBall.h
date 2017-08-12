@@ -10,9 +10,9 @@ public:
 	PongBall(sf::Vector2f , std::string , std::string,std::string);
 	PongBall();
 	void move();
-	void reset(float );
+	void reset(float);
 	void collision(Sprite &, Computer &);
-
+	~PongBall();
 private:
 	void wallCollision();
 	void findBounceAngle(float , float );

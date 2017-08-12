@@ -18,15 +18,25 @@ void PongBall::move()
 {
 	spriteImage.move(ballX, ballY);
 }
+
+/*
+	Places ball in sarting position and moves in last direction.
+*/
 void PongBall::reset(float direction)
 {
 	spriteImage.setPosition(325.0f, 238.5f);
-	ballX = 0;
-
 	ballX = direction * MOVESPEED;
-
 	ballY = 0.0f;
 }
+
+/*
+	Function to check if the ball made contact with p1 or p2 paddle
+	conditionals for dimensions of paddle
+	calls sound if true
+	sets ballX, ballY;
+	calls wall collision
+
+*/
 void PongBall::collision(Sprite &p1, Computer &p2)
 {
 	if (this->spriteLocation().x - 8.0f < p1.spriteLocation().x + 15.0 &&
@@ -51,6 +61,12 @@ void PongBall::collision(Sprite &p1, Computer &p2)
 	}
 	wallCollision();
 }
+
+/*
+	Check if pongball makes contact with the wall
+	if true then a call to wallsound is made
+	checks the X pos of ball to determine angle/direction which the ball should move
+*/
 void PongBall::wallCollision()
 {
 	if (this->spriteLocation().y - 4.0f < 21.5f)
@@ -83,6 +99,11 @@ void PongBall::wallCollision()
 		}
 	}
 }
+
+/*
+	Calculates angle of the ball coming off of the paddle.
+	
+*/
 void PongBall::findBounceAngle(float A, float B)
 {
 	float relativeIntersectY = (((PADDLEHEIGHT / 2) + A) - B); //middle Y of  paddle, minus the Y intersection of the ball
@@ -91,3 +112,5 @@ void PongBall::findBounceAngle(float A, float B)
 
 	bounceAngle = normalizedRelativeIntersectionY * MAXBOUNCEANGLE;
 }
+PongBall::~PongBall()
+{}
