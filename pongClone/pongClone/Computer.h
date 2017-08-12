@@ -1,5 +1,8 @@
 #pragma once
 #include "Sprite.h"
+/*
+	Derived from Sprite class.
+*/
 class Computer :
 	public Sprite
 {

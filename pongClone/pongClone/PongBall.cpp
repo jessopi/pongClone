@@ -1,5 +1,8 @@
 #include "PongBall.h"
 
+/*
+	Loads pongBall texture from file and sets pongBall position and speed;
+*/
 PongBall::PongBall(sf::Vector2f position, std::string texturePath,std::string p_Sound,std::string w_Sound)
 	{
 		paddleSound = new Audio(p_Sound);
@@ -12,8 +15,11 @@ PongBall::PongBall(sf::Vector2f position, std::string texturePath,std::string p_
 		ballY = 0.0f;
 	}
 PongBall::PongBall()
-{
-}
+{}
+
+/*
+	Moves pongball in direction of current X and Y.
+*/
 void PongBall::move()
 {
 	spriteImage.move(ballX, ballY);
@@ -30,12 +36,8 @@ void PongBall::reset(float direction)
 }
 
 /*
-	Function to check if the ball made contact with p1 or p2 paddle
-	conditionals for dimensions of paddle
-	calls sound if true
-	sets ballX, ballY;
-	calls wall collision
-
+	Checks if pongball makes contact with either p1 paddle or p2 paddle.
+	If true then makes call to bounceAngle and then sets the X & Y of ball.
 */
 void PongBall::collision(Sprite &p1, Computer &p2)
 {
@@ -63,9 +65,8 @@ void PongBall::collision(Sprite &p1, Computer &p2)
 }
 
 /*
-	Check if pongball makes contact with the wall
-	if true then a call to wallsound is made
-	checks the X pos of ball to determine angle/direction which the ball should move
+	Checks if the pongBall makes contact with the upper or lower wall.
+	If true then X position is calculated using cos and Y using sin.
 */
 void PongBall::wallCollision()
 {
@@ -101,15 +102,23 @@ void PongBall::wallCollision()
 }
 
 /*
-	Calculates angle of the ball coming off of the paddle.
-	
+	Calculates angle of the ball after coming in contact with paddle or wall.
 */
 void PongBall::findBounceAngle(float A, float B)
 {
-	float relativeIntersectY = (((PADDLEHEIGHT / 2) + A) - B); //middle Y of  paddle, minus the Y intersection of the ball
+	/*
+		middle Y of paddle, minus the Y intersection of the ball
+	*/
+	float relativeIntersectY = (((PADDLEHEIGHT / 2) + A) - B); 
 
-	float normalizedRelativeIntersectionY = (relativeIntersectY / (PADDLEHEIGHT / 2)); //divide again to get 1 to -1 range
+	/*
+		divide again to get 1 to -1 range (normalized)
+	*/
+	float normalizedRelativeIntersectionY = (relativeIntersectY / (PADDLEHEIGHT / 2)); 
 
+	/*
+		Multiply the relative intersection by 1.22173
+	*/
 	bounceAngle = normalizedRelativeIntersectionY * MAXBOUNCEANGLE;
 }
 PongBall::~PongBall()

@@ -18,20 +18,22 @@ private:
 	void render();
 	void newGame();
 	float deltaTime;
+
 	const float ball_Radius = 8.0f;
 	const float paddleSpeed = 400.0f;
+
 	Audio *sound;
 	sf::Event event;
 	sf::Clock clock;
 	sf::RenderWindow *window;
 
-	Sprite *background;				//Background
+	Sprite *background;				
 	Sprite *startScreen;
 	Sprite *gameOver;
 	Sprite *youWin;
 	
-	Player *p1;				//Player
-	Computer *p2;			//Computer
+	Player *p1;				
+	Computer *p2;			
 	Text *p1_Score;		
 	Text *p2_Score;
 

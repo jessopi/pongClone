@@ -1,5 +1,9 @@
 
 #include "Sprite.h"
+
+/*
+	Derived from Sprite class.
+*/
 class Player :
 	public Sprite
 {

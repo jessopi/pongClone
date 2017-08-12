@@ -1,5 +1,8 @@
 #include "Computer.h"
 
+/*
+	Loads textures from file and sets position for them.
+*/
 Computer::Computer(sf::Vector2f position, std::string texturePath)
 {
 	initial_position = position;
@@ -12,9 +15,9 @@ Computer::Computer()
 }
 
 /*
-	Takes pongBall's current Y pos and deltaTime
-	Tracks the pongball current y postion adn moves accordingly
-	to intercept it.
+	Checks if the pongballs Y position is higher or lower than
+	the paddles current Y position. If true then the paddle
+	moves to the pongballs Y position.
 */
 void Computer::paddleFollow(float BallY, float deltaTime)
 {

@@ -1,15 +1,7 @@
-/*
-*	Ian Jessop
-*	Fall 2017
-*	Game.cpp
-*	
-*/
-
-
-
 #include "Game.h"
+
 /*
-	Declaring needed objects
+	Initializing objects with initial position,sound and images.
 */
 Game::Game()
 {
@@ -33,14 +25,9 @@ Game::Game()
 }
 
 /*
-	Game Loop, continues till window closes
-	Accepts keys W,S,Space and ESC
-	Moves p1 paddle up or down if W or S is pressed
-	First run through brings up Start Screen
-	and then only pauses if asked to play again.
-	Makes calls to p2 paddle, ball move and collision
-
-
+	Main game loop, continues till window closes.
+	Handles calling functions for moving paddles and ball.
+	Polls for accepted keys such as spacebar, Esc, W and S.
 */
 void Game::start()
 {
@@ -52,6 +39,10 @@ void Game::start()
 				window->close();
 		}
 		
+		/*
+			While game is not paused.
+		*/
+
 		if (isPaused == 0)
 		{
 				deltaTime = clock.restart().asSeconds();
@@ -66,15 +57,29 @@ void Game::start()
 			p1->move(paddleSpeed*deltaTime);
 		}
 
+			/*
+				Call to track the pongballs movement with the paddle.
+			*/
+
 			p2->paddleFollow(ball->spriteLocation().y, deltaTime);
 
 			ball->move();
+
+			/*
+				Checks if any collision occured with the pongball for p1,p2 paddles.
+			*/
+
 			ball->collision(*p1, *p2);
 			render();
 			checkScore();
 		}
 		else 
 		{	
+			/*
+				First time program is run the start screen is displayed and prompts
+				user to press spacebar to begin.
+			*/
+
 			if (firstRun && isPaused)
 			{
 				startScreen->Render(*window);
@@ -95,10 +100,8 @@ void Game::start()
 }
 
 /*
-	Checks if the the computer/player scores and calculates the score.
-	if score for either reaches 5 win/loss screen appears and game ends.
-	call to sound for scoring audio.
-
+	Checks if the the computer/player scores and increments the score.
+	If score == 5 then call to end game image and the game is paused.
 */
 void Game::checkScore()
 {
@@ -122,7 +125,7 @@ void Game::checkScore()
 	{
 		sound->play();
 
-		if (p1_Score->getScore() == 1)
+		if (p1_Score->getScore() == 5)
 		{
 			p1_Score->update();
 			youWin->Render(*window);
@@ -136,8 +139,9 @@ void Game::checkScore()
 		}
 	}
 }
+
 /*
-	Resets paddles,ball and scores back to original
+	Resets the paddles, ball and scores back to the initial values.
 */
 void Game::newGame()
 {
@@ -149,7 +153,7 @@ void Game::newGame()
 }
 
 /*
-Calls render for all needed classes and then displays them
+	clears window and renders the needed objects to the screen.
 */
 void Game::render()
 {
@@ -162,5 +166,6 @@ void Game::render()
 	ball->Render(*window);
 	window->display();
 }
+
 Game::~Game()
 {}

@@ -22,6 +22,10 @@ private:
 	float ballY;
 	float bounceAngle;
 	float const PADDLEHEIGHT = 100.0f;
+	/* 
+		Angle of ball bounce.
+	*/
+
 	float const MAXBOUNCEANGLE = 1.22173f;
 	float const MOVESPEED = 9.0f;
 };
